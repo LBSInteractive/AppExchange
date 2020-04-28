@@ -1,0 +1,13 @@
+<template>
+    <lightning-card variant="Narrow" title="TRM (Hoy)" icon-name="standard:partner_marketing_budget">
+        <lightning-button-icon onclick={$EVENT.refreshData} icon-name="utility:refresh" slot="actions" variant="border-filled"
+            alternative-text="Refresh" title="Recargar" disabled={$VIEW.card.buttons.refresh}>
+        </lightning-button-icon>
+        <p slot="footer" class="card">
+            <lightning-formatted-number if:false={trmString.error} value={trmString.data} format-style="currency"
+                currency-code="COP" currency-display-as="code"></lightning-formatted-number>
+            <lightning-formatted-number if:true={trmString.error} value="0" format-style="currency" currency-code="COP"
+                currency-display-as="code"></lightning-formatted-number>
+        </p>
+    </lightning-card>
+</template>
