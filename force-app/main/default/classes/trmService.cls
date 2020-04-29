@@ -15,5 +15,3 @@ public with sharing class trmService {
     }
 
 }
-
-
